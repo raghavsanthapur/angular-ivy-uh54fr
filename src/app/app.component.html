@@ -1,0 +1,34 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Week</th>
+      <th>Expense Type</th>
+      <th>Amount</th>
+    </tr>
+    <ng-container *ngFor="let item of displayData;">
+      <ng-container *ngFor="let week of item.WEEK;">
+        <tr *ngFor="let expense of week.EXPENSE;" (click)="handleClick(content, item, week, expense)">
+          <td>{{ item.WHO }}</td>
+          <td>{{ week.NUMBER }}</td>
+          <td>{{ expense.WHAT }}</td>
+          <td>{{ expense.AMOUNT }}</td>
+        </tr>
+      </ng-container>
+    </ng-container>
+  </table>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>

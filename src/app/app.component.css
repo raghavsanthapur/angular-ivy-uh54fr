@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr th,
+tr td {
+  border: 1px solid #aaa;
+  padding: 5px 10px;
+}
+
+tr td {
+  font-size: 14px;
+  color: #555;
+}
